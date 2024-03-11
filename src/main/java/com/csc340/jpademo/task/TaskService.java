@@ -15,7 +15,7 @@ public class TaskService {
     private TaskRepository repo;
 
     public Task getTaskById(long id) {
-        return repo.getTaskById(id);
+        return repo.getReferenceById(id);
     }
 
     public List<Task> getAllTasks() {
@@ -23,15 +23,15 @@ public class TaskService {
     }
 
     public void saveTask(Task task) {
-        repo.saveTask(task);
+        repo.save(task);
     }
 
-    public void updateTask(Task task) {       
-        repo.updateTask(task);
+    public void updateTask(Task task) {
+        repo.save(task);
     }
 
     public void deleteTaskById(long id) {
-        repo.deleteTaskByID(id);
+        repo.deleteById(id);
     }
 
     public List<Task> getTasksByGoalNumber(long goalId) {

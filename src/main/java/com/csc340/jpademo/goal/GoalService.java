@@ -40,7 +40,7 @@ public class GoalService {
     public void deleteGoalByIdEager(long goalId) {
         List<Task> tasks = taskRepo.findTasksByGoalNumber(goalId);
         for (Task task : tasks) {
-            taskRepo.deleteTaskByID(task.getTaskId());
+            taskRepo.deleteById(task.getTaskId());
         }
         repo.deleteById(goalId);
     }
